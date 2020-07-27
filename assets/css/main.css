@@ -1,0 +1,30 @@
+@font-face {
+  font-family: Sarabun;
+  src: url('/fonts/THSarabunNew.ttf');
+}
+@font-face {
+  font-family: Sarabun-bold;
+  src: url('/fonts/THSarabunNew Bold.ttf');
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: Sarabun-bold;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+
+span,
+p,
+label {
+  font-family: Sarabun;
+}
