@@ -1,4 +1,4 @@
-# law-platform-frontend
+# law-platform-frontend (project-hackathon)
 
 ## Build Setup
 
