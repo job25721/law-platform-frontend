@@ -1,7 +1,50 @@
 <template>
   <div class="card">
-    <div class="card-body">
-      This is some text within a card body.
+    <div class="card-body row align-items-center">
+      <div class="col-lg-2 justify-content-center d-flex">
+        <img src="/logo.svg" width="100%" alt="" />
+      </div>
+      <div class="col-lg-7">
+        <div>
+          <h1 style="font-size: 30px;" class="m-0">กฎหมายประชาธิปไตย</h1>
+          <span style="font-size: 18px;">เสนอโดย : นายปฐมพร ปั๋นแก้ว</span>
+        </div>
+        <div class="w-100">
+          <p style="font-size: 20px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+            laudantium at ad totam corporis atque eveniet earum corrupti, animi
+            consequuntur placeat fugiat aut deserunt dignissimos asperiores
+            molestias dolorem non laborum.
+          </p>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <button class="btn btn-outline-success">โหวตให้กฎหมายนี้</button>
+        <button class="btn btn-light inspect">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+button {
+  margin: 5px;
+}
+.inspect {
+  display: none;
+}
+.card {
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.card:hover {
+  box-shadow: 2px 2px 5px #00000050;
+  .inspect {
+    display: inline;
+  }
+}
+</style>
