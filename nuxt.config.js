@@ -37,6 +37,7 @@ export default {
   css: [
     '~/static/bootstrap-alpha/css/bootstrap.min.css',
     '~/assets/css/main.css',
+    '~/node_modules/@fortawesome/fontawesome-free/css/all.min.css',
   ],
   /*
    ** Plugins to load before mounting the App

@@ -7,6 +7,7 @@
     <p>สวัสดี normal</p>
     <label>test nuxt-sweetalert</label>
     <button class="btn btn-danger" @click="test">Alert</button>
+    <i class="fab fa-facebook fa-2x"></i>
   </div>
 </template>
 
