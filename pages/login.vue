@@ -13,29 +13,32 @@
               <form>
                 <div class="form-group formmargin">
                   <label>รหัสประจำตัวประชาชน</label>
-                  <input type="email" class="form-control" />
+                  <input type="text" class="form-control" />
                 </div>
                 <div class="form-group row formmargin">
-                  <div class="col-6">
+                  <div class="col-sm-8">
                     <label>เบอร์โทรศัพท์</label>
-                    <input type="password" class="form-control" />
+                    <input type="text" class="form-control" />
                   </div>
-                  <div class="col-6 otpbutton">
-                    <button type="submit" class="btn btn-primary">
+                  <div class="col-sm-4 otpbutton">
+                    <button
+                      type="submit"
+                      class="btn btn-primary float-right otpbutton2"
+                    >
                       รับรหัส OTP
                     </button>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <div class="col-6">
+                  <div class="col-5">
                     <label>รหัส OTP ยืนยัน</label>
                     <input type="password" class="form-control" />
                   </div>
-                  <div class="col-6 btn-toolbar but">
-                    <button type="submit" class="btn btn-primary btn-sm">
+                  <div class="col-7 but float-right">
+                    <button type="submit" class="btn btn-primary subbtn">
                       ส่งอีกครั้ง
                     </button>
-                    <button type="submit" class="btn btn-danger btn-sm">
+                    <button type="submit" class="btn btn-danger subbtn">
                       ยืนยัน
                     </button>
                   </div>
@@ -46,7 +49,7 @@
                 </div>
                 <button
                   type="submit"
-                  class="btn btn-success float-right submitbutton setfont"
+                  class="btn btn-success float-right submitbtn"
                 >
                   ลงชื่อเข้าใช้งาน
                 </button>
@@ -66,6 +69,9 @@ export default {
 </script>
 
 <style scoped>
+.fixbox {
+  width: 140px;
+}
 input {
   box-shadow: 5px 5px 5px #aaaaaa;
 }
@@ -79,11 +85,15 @@ img.center {
   display: block;
   margin: 0 auto;
 }
+.subbtn {
+  width: 90px;
+  height: 40px;
+}
 .btn {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
-.float-right {
+.submitbtn {
   width: 150px;
   margin-top: 50px;
 }
@@ -101,24 +111,23 @@ label {
 }
 .otpbutton {
   padding-top: 35px;
-  width: 150px;
+}
+.otpbutton2 {
+  width: 100px;
+  height: 40px;
 }
 .but {
-  padding-top: 40px;
+  padding-top: 35px;
 }
 .login {
   font-family: Sarabun;
   src: url('/fonts/THSarabunNew.ttf');
-}
-.box1 {
-  width: 300px;
-}
-.box {
-  width: 400px;
-}
-.login {
   background-color: whitesmoke;
 }
+.box {
+  width: 380px;
+}
+
 .icon {
   width: 20%;
   height: 20%;
