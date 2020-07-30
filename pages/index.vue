@@ -13,7 +13,7 @@ export default {}
 
 <style lang="scss" scoped>
 .card-container {
-  height: 700px;
+  height: 80vh;
   overflow: auto;
 }
 </style>

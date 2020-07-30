@@ -19,7 +19,9 @@
         </div>
       </div>
       <div class="col d-flex justify-content-center">
-        <button class="btn btn-outline-success">โหวตให้กฎหมายนี้</button>
+        <button class="btn btn-outline-success" @click="vote">
+          โหวตให้กฎหมายนี้
+        </button>
         <button class="btn btn-light inspect">
           <i class="fas fa-search"></i>
         </button>
@@ -27,7 +29,21 @@
     </div>
   </div>
 </template>
-
+<script>
+import { mapActions } from 'vuex'
+export default {
+  data() {
+    return {
+      voted: false,
+    }
+  },
+  methods: {
+    ...mapActions({
+      vote: 'law/vote',
+    }),
+  },
+}
+</script>
 <style lang="scss" scoped>
 button {
   margin: 5px;
