@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background: #800000;">
-    <div class="container">
+    <div class="container-fluid">
       <span class="navbar-brand d-flex align-items-center">
         <img
           src="/logo.svg"
@@ -30,33 +30,23 @@
               class="nav-link"
               :class="currentPath === 'index' ? 'active' : ''"
               aria-current="page"
-              href="#"
+              href="/"
               >รายชื่อกฎหมายที่เปิดโหวต</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">กฎหมายที่เข้าชื่อเสนอของฉัน</a>
-          </li>
-          <li class="nav-item dropdown">
             <a
-              id="navbarDropdown"
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
+              class="nav-link"
+              :class="currentPath === 'mylaw' ? 'active' : ''"
+              href="/mylaw"
+              >กฎหมายที่เข้าชื่อเสนอของฉัน</a
             >
-              ข้อมูลส่วนตัว
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
           </li>
         </ul>
-        <button class="btn btn-light">ลงชื่อเข้าใช้</button>
+        <div class="buttons">
+          <button class="btn btn-warning">ริเริ่มร่างกฎหมาย</button>
+          <button class="btn btn-light">ลงชื่อเข้าใช้</button>
+        </div>
       </div>
     </div>
   </nav>
