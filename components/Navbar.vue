@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background: #800000;">
-    <div class="container">
+    <div class="container-fluid">
       <span class="navbar-brand d-flex align-items-center">
         <img
           src="/logo.svg"

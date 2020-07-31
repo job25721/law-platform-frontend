@@ -2,15 +2,17 @@
   <div class="card">
     <div class="card-body row align-items-center">
       <div class="col-lg-2 justify-content-center d-flex">
-        <img src="/logo.svg" width="100%" alt="" />
+        <img src="/logo.svg" width="70%" alt="" />
       </div>
       <div class="col-lg-7">
         <div>
-          <h1 style="font-size: 30px;" class="m-0">กฎหมายประชาธิปไตย</h1>
-          <span style="font-size: 18px;">เสนอโดย : นายปฐมพร ปั๋นแก้ว</span>
+          <h1 style="font-size: 35px;" class="m-0">{{ $props.name }}</h1>
+          <span style="font-size: 25px; color: #a8a8a8;"
+            >เสนอโดย : {{ $props.owner }}</span
+          >
         </div>
         <div class="w-100">
-          <p style="font-size: 20px;">
+          <p style="font-size: 25px;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
             laudantium at ad totam corporis atque eveniet earum corrupti, animi
             consequuntur placeat fugiat aut deserunt dignissimos asperiores
@@ -32,6 +34,7 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
+  props: ['name', 'owner', 'content'],
   data() {
     return {
       voted: false,
