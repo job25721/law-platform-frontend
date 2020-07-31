@@ -34,15 +34,15 @@
                     <label>รหัส OTP ยืนยัน</label>
                     <input type="password" class="form-control" />
                   </div>
-                  <div class="col-7 but float-right">
-                    <button type="submit" class="btn btn-primary subbtn">
+                  <div class="col-7 but float-right set">
+                    <button type="submit" class="btn btn-primary mr-1 ml-4">
                       ส่งอีกครั้ง
                     </button>
-                    <button type="submit" class="btn btn-danger subbtn">
+                    <button type="submit" class="btn btn-danger ml-3">
                       ยืนยัน
                     </button>
                   </div>
-                  <small class="form-text text-muted"
+                  <small class="form-text text-muted mb-5"
                     >*เฉพาะผู้ที่มีสิทธิ์เลือกตั้งที่อายุไม่ต่ำกว่า 18
                     ปีเท่านั้น</small
                   >
@@ -69,33 +69,15 @@ export default {
 </script>
 
 <style scoped>
-.fixbox {
-  /* width: 140px; */
-}
-input {
-  /* box-shadow: 5px/ 5px 5px #aaaaaa; */
-}
-img {
-  /* margin-top: 20%; */
-  /* margin-bottom: 10%; */
-  width: 150px;
-  height: 150px;
-}
 img.center {
   display: block;
   margin: 0 auto;
-}
-.subbtn {
-  /* width: 90px; */
-  /* height: 40px; */
+  width: 150px;
+  height: 150px;
 }
 .btn {
   font-size: 22px;
   font-weight: bold;
-}
-.submitbtn {
-  /* width: 150px; */
-  /* margin-top: 50px; */
 }
 small {
   font-size: 18px;
@@ -121,8 +103,6 @@ label {
 }
 .login {
   font-family: Sarabun;
-
-  background-color: whitesmoke;
 }
 .box {
   width: 380px;
