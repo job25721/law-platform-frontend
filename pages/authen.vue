@@ -3,6 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-6">
         <h2 class="text-center">ข้อมูลส่วนตัว</h2>
+
         <form>
           <h3>ข้อมูลทั่วไป</h3>
           <fieldset disabled>
@@ -23,7 +24,6 @@
               />
             </div>
           </fieldset>
-          <!--  -->
           <div class="form-group row">
             <div class="col-2">
               <fieldset disabled>
@@ -44,7 +44,6 @@
               <input type="text" class="form-control" />
             </div>
           </div>
-          <!--  -->
           <div class="form-group row">
             <div class="col-2">
               <fieldset disabled>
