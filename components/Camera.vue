@@ -1,7 +1,18 @@
 <template>
-  <div class="camera">
-    <video autoplay class="feed"></video>
-    <button @click="$emit('takePicture')">ถ่ายรูป</button>
+  <div
+    class="camera d-flex justify-content-center align-items-center flex-column"
+  >
+    <div
+      style="position: relative;"
+      class="w-50 h-50 d-flex justify-content-center align-items-center"
+    >
+      <div class="test"></div>
+      <video autoplay class="feed"></video>
+    </div>
+
+    <div>
+      <button class="button" @click="$emit('takePicture')">ถ่ายรูป</button>
+    </div>
   </div>
 </template>
 
@@ -45,15 +56,26 @@ export default {
 </script>
 
 <style>
-.camera {
-  width: '100vw';
-  height: '100vh';
+.test {
+  border: 5px solid white;
+  border-radius: 10px;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  z-index: 1;
 }
+
 .camera .feed {
   display: block;
   margin: auto;
   width: 50%;
   max-width: 1280px;
   box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.feed {
+  width: 100% !important;
+  height: 100% !important;
 }
 </style>

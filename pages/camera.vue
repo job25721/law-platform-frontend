@@ -29,6 +29,7 @@ export default {
         picture.width,
         picture.height
       )
+      console.log(picture.toDataURL('image/jpeg', 1.0))
     },
   },
 }
