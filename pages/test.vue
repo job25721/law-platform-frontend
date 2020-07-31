@@ -13,6 +13,10 @@
 
 <script>
 export default {
+  async created() {
+    const res = await this.$axios.$get('/laws')
+    console.log(res)
+  },
   methods: {
     test() {
       this.$store.dispatch('alertFn')

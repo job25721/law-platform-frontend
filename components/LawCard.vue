@@ -2,7 +2,11 @@
   <div class="card">
     <div class="card-body row align-items-center">
       <div class="col-lg-2 justify-content-center d-flex">
-        <img src="/logo.svg" width="70%" alt="" />
+        <img
+          :src="`http://103.3.60.239:8000${$props.imgPath}`"
+          width="100%"
+          alt=""
+        />
       </div>
       <div class="col-lg-7">
         <div>
@@ -13,13 +17,12 @@
         </div>
         <div class="w-100">
           <p style="font-size: 25px;">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-            laudantium at ad totam corporis atque eveniet earum corrupti, animi
-            consequuntur placeat fugiat aut deserunt dignissimos asperiores
-            molestias dolorem non laborum.
+            {{ $props.description }}
           </p>
           <div class="status">
-            <span class="badge bg-info">จำนวนคนโหวตขณะนี้ 2000 คน</span>
+            <span class="badge bg-info"
+              >จำนวนคนโหวตขณะนี้ {{ $props.voteNumber }} คน</span
+            >
             <span
               v-if="$props.option === 'lawOwner'"
               class="badge"
@@ -55,7 +58,15 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  props: ['name', 'owner', 'content', 'option', 'status'],
+  props: [
+    'name',
+    'owner',
+    'option',
+    'status',
+    'imgPath',
+    'voteNumber',
+    'description',
+  ],
   data() {
     return {
       voted: false,
