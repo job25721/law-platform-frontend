@@ -25,7 +25,6 @@
                   />
                 </div>
               </fieldset>
-
               <!--  -->
               <div class="form-group row">
                 <div class="col-2">
@@ -125,7 +124,6 @@
 }
 h2 {
   font-family: Sarabun;
-  src: url('/fonts/THSarabunNew.ttf');
   font-weight: bold;
 }
 h3 {
@@ -135,6 +133,5 @@ h3 {
 label {
   font-family: Sarabun;
   font-size: 22px;
-  src: url('/fonts/THSarabunNew.ttf');
 }
 </style>
