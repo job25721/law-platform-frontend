@@ -42,24 +42,6 @@
               >กฎหมายที่เข้าชื่อเสนอของฉัน</a
             >
           </li>
-          <li class="nav-item dropdown">
-            <a
-              id="navbarDropdown"
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
-            >
-              ข้อมูลส่วนตัว
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
         </ul>
         <div class="buttons">
           <button class="btn btn-warning">ริเริ่มร่างกฎหมาย</button>
