@@ -18,12 +18,33 @@
             consequuntur placeat fugiat aut deserunt dignissimos asperiores
             molestias dolorem non laborum.
           </p>
+          <div class="status">
+            <span class="badge bg-info">จำนวนคนโหวตขณะนี้ 2000 คน</span>
+            <span
+              v-if="$props.option === 'lawOwner'"
+              class="badge"
+              :class="`bg-${$props.status.color}`"
+              >สถานะ : {{ $props.status.text }}</span
+            >
+          </div>
         </div>
       </div>
       <div class="col d-flex justify-content-center">
-        <button class="btn btn-outline-success" @click="vote">
-          โหวตให้กฎหมายนี้
-        </button>
+        <div v-if="$props.option !== 'lawOwner'">
+          <button class="btn btn-outline-success" @click="vote">
+            โหวตให้กฎหมายนี้
+          </button>
+        </div>
+        <div v-else>
+          <button class="btn btn-success">เริ่มเปิดโหวต</button>
+          <button class="btn btn-warning">ส่งร่างให้รัฐสภา</button>
+          <button class="btn btn-primary">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="btn btn-danger">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
         <button class="btn btn-light inspect">
           <i class="fas fa-search"></i>
         </button>
@@ -34,7 +55,7 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  props: ['name', 'owner', 'content'],
+  props: ['name', 'owner', 'content', 'option', 'status'],
   data() {
     return {
       voted: false,
@@ -65,5 +86,8 @@ button {
   .inspect {
     display: inline;
   }
+}
+.badge {
+  font-size: 20px;
 }
 </style>
