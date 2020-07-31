@@ -30,7 +30,7 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <div class="col-5">
+                  <div class="col-lg-5">
                     <label>รหัส OTP ยืนยัน</label>
                     <input type="password" class="form-control" />
                   </div>
@@ -70,14 +70,14 @@ export default {
 
 <style scoped>
 .fixbox {
-  width: 140px;
+  /* width: 140px; */
 }
 input {
-  box-shadow: 5px 5px 5px #aaaaaa;
+  /* box-shadow: 5px/ 5px 5px #aaaaaa; */
 }
 img {
-  margin-top: 20%;
-  margin-bottom: 10%;
+  /* margin-top: 20%; */
+  /* margin-bottom: 10%; */
   width: 150px;
   height: 150px;
 }
@@ -86,16 +86,16 @@ img.center {
   margin: 0 auto;
 }
 .subbtn {
-  width: 90px;
-  height: 40px;
+  /* width: 90px; */
+  /* height: 40px; */
 }
 .btn {
   font-size: 22px;
   font-weight: bold;
 }
 .submitbtn {
-  width: 150px;
-  margin-top: 50px;
+  /* width: 150px; */
+  /* margin-top: 50px; */
 }
 small {
   font-size: 18px;
@@ -121,7 +121,7 @@ label {
 }
 .login {
   font-family: Sarabun;
-  src: url('/fonts/THSarabunNew.ttf');
+
   background-color: whitesmoke;
 }
 .box {
