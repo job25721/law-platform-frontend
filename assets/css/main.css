@@ -7,13 +7,15 @@
   src: url('/fonts/THSarabunNew Bold.ttf');
 }
 
-body {
+body,
+html {
   height: 100vh;
   margin: 0;
 }
 
 h1,
-h2,label {
+h2,
+label {
   font-family: Sarabun-bold;
 }
 h1 {

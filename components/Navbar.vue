@@ -26,26 +26,37 @@
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a
-              class="nav-link"
+            <button
+              class="nav-link btn btn-primary"
               :class="currentPath === 'index' ? 'active' : ''"
               aria-current="page"
-              href="/"
-              >รายชื่อกฎหมายที่เปิดโหวต</a
+              @click="$router.push('/')"
             >
+              รายชื่อกฎหมายที่เปิดโหวต
+            </button>
           </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
+          <li v-if="$auth.loggedIn" class="nav-item">
+            <button
+              class="nav-link btn btn-dark"
               :class="currentPath === 'mylaw' ? 'active' : ''"
-              href="/mylaw"
-              >กฎหมายที่เข้าชื่อเสนอของฉัน</a
+              @click="$router.push('/mylaw')"
             >
+              กฎหมายที่เข้าชื่อเสนอของฉัน
+            </button>
           </li>
         </ul>
         <div class="buttons">
           <button class="btn btn-warning">ริเริ่มร่างกฎหมาย</button>
-          <button class="btn btn-light">ลงชื่อเข้าใช้</button>
+          <button
+            v-if="!$auth.loggedIn"
+            class="btn btn-light"
+            @click="$router.push('/login')"
+          >
+            ลงชื่อเข้าใช้
+          </button>
+          <button v-if="$auth.loggedIn" class="btn btn-danger" @click="logout">
+            ออกจากระบบ
+          </button>
         </div>
       </div>
     </div>
@@ -60,6 +71,13 @@ export default {
   },
   created() {
     console.log(this.currentPath)
+    console.log(this.$auth.loggedIn)
+  },
+  methods: {
+    logout() {
+      this.$auth.logout()
+      this.$swal('Logout successful', 'ออกจากระบบสำเร็จ', 'success')
+    },
   },
 }
 </script>
