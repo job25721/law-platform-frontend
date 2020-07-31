@@ -7,31 +7,36 @@
           <div class="">
             <form>
               <h3>ข้อมูลทั่วไป</h3>
-              <div class="form-group">
-                <label for="exampleFormControlInput1">ชื่อ</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Autofill(disable)"
-                />
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlInput1">นามสกุล</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Autofill(disable)"
-                />
-              </div>
+              <fieldset disabled>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">ชื่อ</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Autofill(disable)"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">นามสกุล</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Autofill(disable)"
+                  />
+                </div>
+              </fieldset>
+
               <!--  -->
               <div class="form-group row">
                 <div class="col-2">
-                  <label for="exampleFormControlInput1">เพศ</label>
-                  <input
-                    type="text"
-                    placeholder="Autofill"
-                    class="form-control"
-                  />
+                  <fieldset disabled>
+                    <label for="exampleFormControlInput1">เพศ</label>
+                    <input
+                      type="text"
+                      placeholder="Autofill"
+                      class="form-control"
+                    />
+                  </fieldset>
                 </div>
                 <div class="col-5">
                   <label for="exampleFormControlInput1">เชื้อชาติ</label>
@@ -45,32 +50,38 @@
               <!--  -->
               <div class="form-group row">
                 <div class="col-2">
-                  <label for="exampleFormControlInput1">เพศ</label>
-                  <input
-                    type="text"
-                    placeholder="Autofill"
-                    class="form-control"
-                  />
+                  <fieldset disabled>
+                    <label for="exampleFormControlInput1">เพศ</label>
+                    <input
+                      type="text"
+                      placeholder="Autofill"
+                      class="form-control"
+                    />
+                  </fieldset>
                 </div>
                 <div class="col-5"></div>
                 <div class="col-5">
-                  <label for="exampleFormControlInput1">เกิดวันที่</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Autofill"
-                  />
+                  <fieldset disabled>
+                    <label for="exampleFormControlInput1">เกิดวันที่</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Autofill"
+                    />
+                  </fieldset>
                 </div>
               </div>
               <!--  -->
               <div class="form-group row">
                 <div class="col-5">
-                  <label for="exampleFormControlInput1">เบอร์โทรศัพท์</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Autofill"
-                  />
+                  <fieldset disabled>
+                    <label for="exampleFormControlInput1">เบอร์โทรศัพท์</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Autofill"
+                    />
+                  </fieldset>
                 </div>
               </div>
               <!--  -->
