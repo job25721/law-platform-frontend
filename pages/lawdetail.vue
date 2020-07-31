@@ -3,8 +3,10 @@
     <div class="row">
       <div class="col-3">
         <h3>กฎหมายล้มเจ้า</h3>
-        <p>วันที่เข้าชื่อเสนอ 28 กรกฎาคม พ.ศ.2563</p>
-        <button type="button" class="btn btn-sm btn-primary" disabled>
+        <h5>
+          วันที่เข้าชื่อเสนอ 28 กรกฎาคม พ.ศ.2563
+        </h5>
+        <button type="button" class="btn btn-sm btn-info" disabled>
           จำนวนโหวตรอบนี้ : 1280 คน
         </button>
         <img
@@ -78,7 +80,11 @@
       <!--  -->
       <div class="col-3">
         <div class="float-right">
-          <button type="button" class="btn btn-sm btn-success">
+          <button
+            type="button"
+            class="btn btn-sm btn-success"
+            style="font-family: Sarabun; font-size: 22px;"
+          >
             โหวตให้กฎหมายนี้
           </button>
         </div>
@@ -87,3 +93,10 @@
     </div>
   </div>
 </template>
+<style scoped>
+h5 {
+  font-family: Sarabun;
+  color: rgb(192, 192, 192);
+  font-size: 24px;
+}
+</style>
