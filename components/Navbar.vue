@@ -44,7 +44,7 @@
           </li>
         </ul>
         <div class="buttons">
-          <button class="btn btn-warning">ริเริ่มร่างกฎหมาย</button>
+          <button class="btn btn-warning">เสนอร่างกฎหมาย</button>
           <button class="btn btn-light">ลงชื่อเข้าใช้</button>
         </div>
       </div>
