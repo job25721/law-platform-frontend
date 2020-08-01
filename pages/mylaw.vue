@@ -1,6 +1,8 @@
 <template>
   <div class="p-4">
-    <h1 class="display-4 mr-3">กฎหมายที่ส่งเข้าเสนอชื่อของฉัน</h1>
+    <h1 class="mr-3" style="font-size: 35px;">
+      กฎหมายที่ส่งเข้าเสนอชื่อของฉัน
+    </h1>
     <div class="card-container container-fluid mt-3">
       <div v-if="show">
         <LawCard
@@ -27,6 +29,7 @@
 </template>
 <script>
 export default {
+  middleware: 'auth',
   data() {
     return {
       show: false,

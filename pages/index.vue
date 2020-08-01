@@ -1,23 +1,37 @@
 <template>
   <div class="p-4">
     <div>
-      <h1 class="display-4">รายชื่อกฎหมายที่ส่งเข้าเสนอชื่อ</h1>
-      <button class="btn btn-danger btn-lg">เสนอกฎหมายต่อสภา</button>
+      <h1 style="font-size: 35px;">รายชื่อกฎหมายที่ส่งเข้าเสนอชื่อ</h1>
+      <button class="btn btn-danger">เสนอกฎหมายต่อสภา</button>
     </div>
     <div class="card-container container-fluid mt-3">
       <LawCard
-        v-for="x in 7"
-        :key="x"
-        name="กฎหมาย sample"
-        owner="นายปฐมพร ปั๋นแก้ว"
-        content=""
+        v-for="law in Laws"
+        :key="law._id"
+        :name="law.title"
+        :owner="`${law.initiatePerson.name.first} ${law.initiatePerson.name.last}`"
+        :description="law.description"
+        :imgPath="law.image"
+        :voteNumber="law.voteNumber"
+        :lawId="law._id"
+        :canVote="law.canVote"
       />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState({
+      Laws: ({ law }) => law.laws,
+    }),
+  },
+  async created() {
+    await this.$store.dispatch('law/getLaws')
+  },
+}
 </script>
 
 <style lang="scss" scoped>

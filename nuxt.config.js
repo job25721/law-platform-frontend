@@ -62,7 +62,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // '@nuxtjs/auth',
+    '@nuxtjs/auth',
     '@nuxt/components',
     'vue-sweetalert2/nuxt',
   ],
@@ -70,8 +70,28 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
-  // auth: {},
+  axios: {
+    baseURL: 'http://103.3.60.239:8000/api',
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/person/auth',
+            method: 'post',
+            propertyName: 'data.token',
+          },
+          logout: false,
+          user: {
+            url: '/person/info',
+            method: 'get',
+            propertyName: 'data',
+          },
+        },
+      },
+    },
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

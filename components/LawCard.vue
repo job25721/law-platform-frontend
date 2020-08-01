@@ -2,24 +2,25 @@
   <div class="card">
     <div class="card-body row align-items-center">
       <div class="col-lg-2 justify-content-center d-flex">
-        <img src="/logo.svg" width="70%" alt="" />
+        <img
+          :src="`http://103.3.60.239:8000${$props.imgPath}`"
+          width="100%"
+          alt=""
+        />
       </div>
       <div class="col-lg-7">
         <div>
-          <h1 style="font-size: 35px;" class="m-0">{{ $props.name }}</h1>
-          <span style="font-size: 25px; color: #a8a8a8;"
-            >เสนอโดย : {{ $props.owner }}</span
-          >
+          <h1 class="m-0" style="font-size: 25px;">{{ $props.name }}</h1>
+          <span style="color: #a8a8a8;">เสนอโดย : {{ $props.owner }}</span>
         </div>
         <div class="w-100">
-          <p style="font-size: 25px;">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-            laudantium at ad totam corporis atque eveniet earum corrupti, animi
-            consequuntur placeat fugiat aut deserunt dignissimos asperiores
-            molestias dolorem non laborum.
+          <p style="font-size: 18px;">
+            {{ $props.description }}
           </p>
           <div class="status">
-            <span class="badge bg-info">จำนวนคนโหวตขณะนี้ 2000 คน</span>
+            <span class="badge bg-info"
+              >จำนวนคนที่เข้าเชื่อเสนอ : {{ $props.voteNumber }} คน</span
+            >
             <span
               v-if="$props.option === 'lawOwner'"
               class="badge"
@@ -31,8 +32,12 @@
       </div>
       <div class="col d-flex justify-content-center">
         <div v-if="$props.option !== 'lawOwner'">
-          <button class="btn btn-outline-success" @click="vote">
-            โหวตให้กฎหมายนี้
+          <button
+            v-if="$props.canVote"
+            class="btn btn-outline-success"
+            @click="vote($props.lawId)"
+          >
+            เข้าเสนอชื่อให้กฎหมายนี้
           </button>
         </div>
         <div v-else>
@@ -55,7 +60,17 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  props: ['name', 'owner', 'content', 'option', 'status'],
+  props: [
+    'name',
+    'owner',
+    'option',
+    'status',
+    'imgPath',
+    'voteNumber',
+    'description',
+    'lawId',
+    'canVote',
+  ],
   data() {
     return {
       voted: false,
@@ -63,7 +78,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      vote: 'law/vote',
+      vote: 'law/voteConfirm',
     }),
   },
 }
@@ -88,6 +103,6 @@ button {
   }
 }
 .badge {
-  font-size: 20px;
+  font-size: 1rem;
 }
 </style>
