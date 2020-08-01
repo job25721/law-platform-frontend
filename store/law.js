@@ -19,13 +19,14 @@ export const actions = {
   voteConfirm({ dispatch }, lawId) {
     console.log(`lawId ${lawId}`)
     this.$swal({
-      title: 'ต้องการโหวตกฎหมายนี้',
+      title: 'ต้องการเข้าชื่อเสนอกฎหมายนี้',
       text: 'สามารถกดโหวตได้ครั้งเดียวเท่านั้นไม่สามารถยกเลิกผลโหวตได้',
-      icon: 'warning',
+      icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'ตกลง',
+      cancelButtonText: 'ยกเลิก',
     }).then(async (result) => {
       if (result.value) {
         try {
