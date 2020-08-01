@@ -27,96 +27,45 @@
             </div>
           </div>
           <!--  -->
-          <fieldset disabled>
-            <div class="row mt-4">
-              <div class="col-4 mt-2"><h4>เลขบัตรประจำตัวประชาชน</h4></div>
-              <div class="col-4 setpadding">
-                <input type="text" class="form-control" placeholder="Auto" />
-              </div>
+          <div class="row mb-2">
+            <div class="col-6">
+              <fieldset disabled>
+                <fieldset disabled>
+                  <div class="form-group">
+                    <label>เลขบัตรประจำตัวประชาชน</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Auto"
+                    />
+                  </div>
+                </fieldset>
+              </fieldset>
             </div>
-          </fieldset>
-          <!--  -->
-          <fieldset disabled>
-            <div class="row mt-4">
-              <div class="col-4 mt-2"><h4>ที่อยู่ที่สามารถติดต่อได้</h4></div>
-              <div class="col-4 setpadding">
-                <input type="text" class="form-control" placeholder="Auto" />
-              </div>
+            <!--  -->
+            <div class="col-6">
+              <fieldset disabled>
+                <div class="form-group">
+                  <label>ที่อยู่ที่สามารถติดต่อได้</label>
+                  <input type="text" class="form-control" placeholder="Auto" />
+                </div>
+              </fieldset>
             </div>
-          </fieldset>
-          <!--  -->
-          <div class="text-center">
-            <h4 style="font-weight: bold; font-size: 28px;">ส่วนที่ ๑</h4>
-            <h4 style="font-weight: bold;">บันทึกหลักการและเหตุผล</h4>
           </div>
-          <div class="row mt-4">
+          <!--  -->
+          <div class="row mt-5">
             <div class="col-2"></div>
-            <div class="col-2"><h4>หลักการ</h4></div>
+            <div class="col-2 mt-2"><h4>หัวเรื่อง</h4></div>
             <div class="col-4 setpadding">
-              <input type="text" class="form-control" />
-            </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-2"></div>
-            <div class="col-2"><h4>เหตุผล</h4></div>
-            <div class="col-8 setpadding">
-              <textarea class="form-control" cols="30" rows="5"></textarea>
+              <input type="text" class="form-control" placeholder="Auto" />
             </div>
           </div>
           <!--  -->
-          <div class="text-center">
-            <h4 style="font-weight: bold; font-size: 28px;">ส่วนที่ ๒</h4>
-            <h4 style="font-weight: bold;">ร่างพระราชบัญญติ</h4>
-          </div>
           <div class="row mt-4">
             <div class="col-2"></div>
-            <div class="col-2"><h4>เนื้อหา</h4></div>
+            <div class="col-2 mt-2"><h4>เนื้อหา</h4></div>
             <div class="col-8 setpadding">
-              <textarea class="form-control" cols="30" rows="5"></textarea>
-            </div>
-          </div>
-
-          <div class="row mt-4">
-            <div class="col-2">
-              <button type="button" class="btn btn-info btn-circle">
-                <i class="fa fa-plus"></i>
-              </button>
-              <button type="button" class="btn btn-light btn-circle">
-                <i class="fa fa-minus"></i>
-              </button>
-            </div>
-            <div class="col-2 mt-2">
-              <h4>หมวดที่ ๑</h4>
-            </div>
-            <div class="col-8 setpadding">
-              <textarea class="form-control" cols="30" rows="5"></textarea>
-            </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-2"></div>
-            <div class="col-2">
-              <button type="button" class="btn btn-info btn-circle">
-                <i class="fa fa-plus"></i>
-              </button>
-              <button type="button" class="btn btn-light btn-circle">
-                <i class="fa fa-minus"></i>
-              </button>
-            </div>
-            <div class="col-2"><h4>มาตราที่ ๑</h4></div>
-            <div class="col-6 setpadding">
-              <textarea class="form-control" cols="30" rows="5"></textarea>
-            </div>
-          </div>
-          <!--  -->
-          <div class="text-center">
-            <h4 style="font-weight: bold; font-size: 28px;">ส่วนที่ ๓</h4>
-            <h4 style="font-weight: bold;">บันทึกวิเคราะห์และสรุปสาระสำคัญ</h4>
-          </div>
-          <div class="row mt-4">
-            <div class="col-2"></div>
-            <div class="col-2"><h4>เนื้อหา</h4></div>
-            <div class="col-8 setpadding">
-              <textarea class="form-control" cols="30" rows="5"></textarea>
+              <textarea class="form-control" cols="30" rows="8"></textarea>
             </div>
           </div>
           <!--  -->
