@@ -23,65 +23,69 @@
           style="width: 100%;"
         />
       </div>
-      <!--  -->
       <div class="col-lg-6" style="overflow: auto; height: 80vh;">
-        <div style="overflow: auto; width: 100%;" class="p-4 bg-white">
-          <div
-            class="card-content"
-            style="font-family: Sarabun; font-size: 25px;"
-          >
-            <div class="text-center">
-              <p>บันทึกหลักการและเหตุล</p>
-              <p>ประกอบร่างพระราชบัญญัติ{{ law.title }}</p>
-              <p>
-                {{ createdYear }}
-              </p>
-              <hr />
+        <LawPaper>
+          <div class="text-center">
+            <p>บันทึกหลักการและเหตุล</p>
+            <p>ประกอบร่างพระราชบัญญัติ{{ law.title }}</p>
+            <p>
+              {{ createdYear }}
+            </p>
+            <hr />
 
-              <div class="text-left">
-                <p>หลักการ</p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                  deserunt expedita voluptate quam delectus facere ut maiores
-                  quidem debitis animi voluptas voluptates, minima et rerum
-                  cupiditate quia hic itaque laudantium.
-                </p>
-                <p>เหตุผล</p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                  deserunt expedita voluptate quam delectus facere ut maiores
-                  quidem debitis animi voluptas voluptates, minima et rerum
-                  cupiditate quia hic itaque laudantium.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style="overflow: auto; width: 100%;" class="p-4 mt-3 bg-white">
-          <div
-            class="card-content"
-            style="font-family: Sarabun; font-size: 25px;"
-          >
-            <div class="text-center">
-              <p>ร่าง</p>
-              <p>พระราชบัญญัติ{{ law.title }}</p>
+            <div class="text-left">
+              <p>หลักการ</p>
               <p>
-                {{ createdYear }}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                deserunt expedita voluptate quam delectus facere ut maiores
+                quidem debitis animi voluptas voluptates, minima et rerum
+                cupiditate quia hic itaque laudantium.
               </p>
-              <div class="text-left">
-                <p>
-                  {{ law.description }}
-                </p>
-                <p v-for="(sec, i) in law.section" :key="i">
-                  <span style="font-family: Sarabun-bold;"
-                    >มาตรา {{ i + 1 }}
-                  </span>
-                  <span>{{ sec }}</span>
-                </p>
-              </div>
+              <p>เหตุผล</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                deserunt expedita voluptate quam delectus facere ut maiores
+                quidem debitis animi voluptas voluptates, minima et rerum
+                cupiditate quia hic itaque laudantium.
+              </p>
             </div>
           </div>
-        </div>
+        </LawPaper>
+        <LawPaper>
+          <div class="text-center">
+            <p>ร่าง</p>
+            <p>พระราชบัญญัติ{{ law.title }}</p>
+            <p>
+              {{ createdYear }}
+            </p>
+            <div class="text-left">
+              <p>
+                {{ law.description }}
+              </p>
+              <p v-for="(sec, i) in law.section" :key="i">
+                <span style="font-family: Sarabun-bold;"
+                  >มาตรา {{ i + 1 }}
+                </span>
+                <span>{{ sec }}</span>
+              </p>
+            </div>
+          </div>
+        </LawPaper>
+        <LawPaper>
+          <div class="text-center">
+            <p>บันทึกวิเคาระห์สรุปสาระสำคัญ</p>
+            <p>ของร่างพระราชบัญญัติ{{ law.title }}</p>
+            <p>
+              {{ createdYear }}
+            </p>
+            <div class="text-left">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam
+              laudantium in, vitae, earum illum nihil a dolorum aliquid tempore
+              quaerat sed, nostrum quas laborum. Aliquam doloribus sit laborum
+              quae ipsa?
+            </div>
+          </div>
+        </LawPaper>
       </div>
       <!--  -->
       <div class="col-3">
