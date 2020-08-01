@@ -59,16 +59,20 @@ export const actions = {
     })
     console.log(sec, principle, reason, description, conclusion)
     try {
-      await this.$axios.$post('/person/laws', {
-        title,
-        type,
-        description,
-        section: sec,
-        principal: principle,
-        reason,
-        conclusion,
-      })
-      this.$swal('Success', 'ริเริ่มสำเร็จ', 'success')
+      // eslint-disable-next-line unicorn/error-message
+      if (type === -1) throw new Error()
+      else {
+        await this.$axios.$post('/person/laws', {
+          title,
+          type,
+          description,
+          section: sec,
+          principal: principle,
+          reason,
+          conclusion,
+        })
+        this.$swal('Success', 'ริเริ่มสำเร็จ', 'success')
+      }
     } catch {
       this.$swal('Error', 'ริเริ่มไม่สำเร็จ', 'error')
     }

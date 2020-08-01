@@ -12,7 +12,11 @@
             <fieldset disabled>
               <div class="form-group">
                 <label>ผู้เสนอชื่อเข้ากฎหมาย</label>
-                <input type="text" class="form-control" placeholder="Auto" />
+                <input
+                  type="text"
+                  class="form-control"
+                  :placeholder="`${user.name.first} ${user.name.last}`"
+                />
               </div>
             </fieldset>
           </div>
@@ -23,7 +27,7 @@
                 v-model="type"
                 class="browser-default custom-select form-control"
               >
-                <option selected>โปรดเลือก</option>
+                <option :value="-1" selected>โปรดเลือก</option>
                 <option value="ทั่วไป">ทั่วไป</option>
                 <option value="การเงิน">การเงิน</option>
                 <option value="พิเศษ">พิเศษ</option>
@@ -36,19 +40,23 @@
           <div class="row mt-4">
             <div class="col-4 mt-2"><h4>เลขบัตรประจำตัวประชาชน</h4></div>
             <div class="col-4 setpadding">
-              <input type="text" class="form-control" placeholder="Auto" />
+              <input
+                type="text"
+                class="form-control"
+                :placeholder="user.idCardNumber"
+              />
             </div>
           </div>
         </fieldset>
         <!--  -->
-        <fieldset disabled>
+        <!-- <fieldset disabled>
           <div class="row mt-4">
             <div class="col-4 mt-2"><h4>ที่อยู่ที่สามารถติดต่อได้</h4></div>
             <div class="col-4 setpadding">
               <input type="text" class="form-control" placeholder="Auto" />
             </div>
           </div>
-        </fieldset>
+        </fieldset> -->
         <!--  -->
         <div class="text-center">
           <h4 style="font-weight: bold; font-size: 28px;">ส่วนที่ ๑</h4>
@@ -199,7 +207,9 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
+
 export default {
+  middleware: 'auth',
   data() {
     return {
       sections: [{ id: 1, content: '', subSection: [{ id: 1, content: '' }] }],
@@ -207,9 +217,14 @@ export default {
       reason: '',
       description: '',
       conclusion: '',
-      type: '',
+      type: -1,
       title: '',
+      user: '',
     }
+  },
+  created() {
+    this.user = this.$auth.user.person
+    console.log(this.user)
   },
   methods: {
     ...mapActions({
