@@ -5,17 +5,7 @@
       <button class="btn btn-danger">เสนอกฎหมายต่อสภา</button>
     </div>
     <div class="card-container container-fluid mt-3">
-      <LawCard
-        v-for="law in Laws"
-        :key="law._id"
-        :name="law.title"
-        :owner="`${law.initiatePerson.name.first} ${law.initiatePerson.name.last}`"
-        :description="law.description"
-        :imgPath="law.image"
-        :voteNumber="law.voteNumber"
-        :lawId="law._id"
-        :canVote="law.canVote"
-      />
+      <LawCard v-for="law in Laws" :key="law._id" :data="law" />
     </div>
   </div>
 </template>
