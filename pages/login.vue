@@ -133,7 +133,7 @@ export default {
 img.center {
   display: block;
   margin: 0 auto;
-  width: 20vw;
+  width: 200px;
 }
 
 small {

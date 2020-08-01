@@ -10,13 +10,11 @@
       </div>
       <div class="col-lg-7">
         <div>
-          <h1 style="font-size: 35px;" class="m-0">{{ $props.name }}</h1>
-          <span style="font-size: 25px; color: #a8a8a8;"
-            >เสนอโดย : {{ $props.owner }}</span
-          >
+          <h1 class="m-0" style="font-size: 25px;">{{ $props.name }}</h1>
+          <span style="color: #a8a8a8;">เสนอโดย : {{ $props.owner }}</span>
         </div>
         <div class="w-100">
-          <p style="font-size: 25px;">
+          <p style="font-size: 18px;">
             {{ $props.description }}
           </p>
           <div class="status">
@@ -74,7 +72,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      vote: 'law/vote',
+      vote: 'law/voteConfirm',
     }),
   },
 }
@@ -99,6 +97,6 @@ button {
   }
 }
 .badge {
-  font-size: 20px;
+  font-size: 1rem;
 }
 </style>

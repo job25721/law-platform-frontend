@@ -3,7 +3,7 @@ export const state = () => ({
   otpisGen: false,
   otp: '',
   cardId: '1111111111111',
-  remainingOtpTime: 5,
+  remainingOtpTime: 60,
   waitingOtpConfirm: false,
 })
 
@@ -55,7 +55,7 @@ export const actions = {
   },
   countdown({ commit, state }) {
     commit('SET_WAITING_OTP_CONFIRM', true)
-    const timeOut = new Date().getSeconds() + 5
+    const timeOut = new Date().getSeconds() + 60
     const loop = setInterval(() => {
       const now = new Date().getSeconds()
       commit('SET_REMAIN_OTP', timeOut - now)

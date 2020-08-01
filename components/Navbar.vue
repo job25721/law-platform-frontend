@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background: #800000;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <span class="navbar-brand d-flex align-items-center">
         <img
@@ -27,8 +27,10 @@
         <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <button
-              class="nav-link btn btn-primary"
-              :class="currentPath === 'index' ? 'active' : ''"
+              class="btn"
+              :class="
+                currentPath === 'index' ? 'active btn-light' : 'text-white'
+              "
               aria-current="page"
               @click="$router.push('/')"
             >
@@ -37,8 +39,10 @@
           </li>
           <li v-if="$auth.loggedIn" class="nav-item">
             <button
-              class="nav-link btn btn-dark"
-              :class="currentPath === 'mylaw' ? 'active' : ''"
+              class="btn"
+              :class="
+                currentPath === 'mylaw' ? 'active btn-light' : 'text-white'
+              "
               @click="$router.push('/mylaw')"
             >
               กฎหมายที่เข้าชื่อเสนอของฉัน
@@ -46,10 +50,10 @@
           </li>
         </ul>
         <div class="buttons">
-          <button class="btn btn-warning">ริเริ่มร่างกฎหมาย</button>
+          <button class="btn btn-info">ริเริ่มร่างกฎหมาย</button>
           <button
             v-if="!$auth.loggedIn"
-            class="btn btn-light"
+            class="btn btn-success"
             @click="$router.push('/login')"
           >
             ลงชื่อเข้าใช้
@@ -77,6 +81,7 @@ export default {
     logout() {
       this.$auth.logout()
       this.$swal('Logout successful', 'ออกจากระบบสำเร็จ', 'success')
+      location.reload()
     },
   },
 }

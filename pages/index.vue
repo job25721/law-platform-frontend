@@ -1,8 +1,8 @@
 <template>
   <div class="p-4">
     <div>
-      <h1 class="display-4">รายชื่อกฎหมายที่ส่งเข้าเสนอชื่อ</h1>
-      <button class="btn btn-danger btn-lg">เสนอกฎหมายต่อสภา</button>
+      <h1 style="font-size: 35px;">รายชื่อกฎหมายที่ส่งเข้าเสนอชื่อ</h1>
+      <button class="btn btn-danger">เสนอกฎหมายต่อสภา</button>
     </div>
     <div class="card-container container-fluid mt-3">
       <LawCard
@@ -19,16 +19,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  data() {
-    return {
-      Laws: [],
-    }
+  computed: {
+    ...mapState({
+      Laws: ({ law }) => law.laws,
+    }),
   },
   async created() {
-    const res = await this.$axios.$get('/laws')
-    this.Laws = res.data.laws
-    console.log(res.data.laws)
+    await this.$store.dispatch('law/getLaws')
   },
 }
 </script>
