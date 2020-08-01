@@ -46,4 +46,31 @@ export const actions = {
       throw err
     }
   },
+  async add(
+    context,
+    { sections, principle, reason, description, conclusion, type, title }
+  ) {
+    const sec = sections.map((section) => {
+      let str = `หมวดที่ ${section.id} ${section.content} `
+      section.subSection.forEach((sub) => {
+        str += `มาตรา ${sub.id} ${sub.content} `
+      })
+      return str
+    })
+    console.log(sec, principle, reason, description, conclusion)
+    try {
+      await this.$axios.$post('/person/laws', {
+        title,
+        type,
+        description,
+        section: sec,
+        principal: principle,
+        reason,
+        conclusion,
+      })
+      this.$swal('Success', 'ริเริ่มสำเร็จ', 'success')
+    } catch {
+      this.$swal('Error', 'ริเริ่มไม่สำเร็จ', 'error')
+    }
+  },
 }

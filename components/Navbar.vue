@@ -57,7 +57,9 @@
           >
         </div>
         <div class="buttons">
-          <button class="btn btn-info">ริเริ่มร่างกฎหมาย</button>
+          <button class="btn btn-info" @click="$router.push('/law/add')">
+            ริเริ่มร่างกฎหมาย
+          </button>
           <button
             v-if="!$auth.loggedIn"
             class="btn btn-success"
