@@ -2,7 +2,7 @@ export const state = () => ({
   phoneNumber: '0932277124',
   otpisGen: false,
   otp: '',
-  cardId: '1111111111111',
+  cardId: '4444444444444',
   remainingOtpTime: 60,
   waitingOtpConfirm: false,
 })

@@ -13,6 +13,8 @@
         :description="law.description"
         :imgPath="law.image"
         :voteNumber="law.voteNumber"
+        :lawId="law._id"
+        :canVote="law.canVote"
       />
     </div>
   </div>

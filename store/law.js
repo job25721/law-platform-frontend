@@ -16,6 +16,7 @@ export const actions = {
     } catch {}
   },
   voteConfirm({ dispatch }, lawId) {
+    console.log(`lawId ${lawId}`)
     this.$swal({
       title: 'ต้องการโหวตกฎหมายนี้',
       text: 'สามารถกดโหวตได้ครั้งเดียวเท่านั้นไม่สามารถยกเลิกผลโหวตได้',
@@ -26,10 +27,21 @@ export const actions = {
       confirmButtonText: 'ตกลง',
     }).then(async (result) => {
       if (result.value) {
-        await dispatch('vote', lawId)
-        this.$swal('โหวตสำเร็จ!', 'คุณได้โหวคให้กฎหมายนี้แล้ว', 'success')
+        try {
+          await dispatch('vote', lawId)
+          this.$swal('โหวตสำเร็จ!', 'คุณได้โหวคให้กฎหมายนี้แล้ว', 'success')
+        } catch {
+          this.$swal('ผิดพลาด', 'โหวตไปแล้ว', 'error')
+        }
       }
     })
   },
-  async vote() {},
+  async vote(context, lawId) {
+    try {
+      await this.$axios.$post(`/person/vote/${lawId}`)
+    } catch (err) {
+      console.log(err)
+      throw err
+    }
+  },
 }

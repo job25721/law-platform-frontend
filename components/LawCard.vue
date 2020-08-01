@@ -32,7 +32,11 @@
       </div>
       <div class="col d-flex justify-content-center">
         <div v-if="$props.option !== 'lawOwner'">
-          <button class="btn btn-outline-success" @click="vote">
+          <button
+            v-if="$props.canVote"
+            class="btn btn-outline-success"
+            @click="vote($props.lawId)"
+          >
             โหวตให้กฎหมายนี้
           </button>
         </div>
@@ -64,6 +68,8 @@ export default {
     'imgPath',
     'voteNumber',
     'description',
+    'lawId',
+    'canVote',
   ],
   data() {
     return {
