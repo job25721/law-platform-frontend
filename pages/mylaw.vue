@@ -40,9 +40,3 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.card-container {
-  height: 70vh;
-  overflow: auto;
-}
-</style>

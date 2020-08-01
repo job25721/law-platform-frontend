@@ -40,7 +40,7 @@
             class="btn btn-outline-success"
             @click="vote($props.data._id)"
           >
-            โหวตให้กฎหมายนี้
+            เข้าเสนอชื่อให้กฎหมายนี้
           </button>
         </div>
         <div v-else>
