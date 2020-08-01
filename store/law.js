@@ -12,6 +12,7 @@ export const actions = {
   async getLaws({ commit }) {
     try {
       const res = await this.$axios.$get('/laws')
+      console.log(res)
       commit('SET_LAWS', res.data.laws)
     } catch {}
   },
