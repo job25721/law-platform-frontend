@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @click="$router.push(`/law/${$props.data._id}`)">
     <div class="card-body row align-items-center">
       <div class="col-lg-2 justify-content-center d-flex">
         <img
@@ -36,11 +36,16 @@
       <div class="col d-flex justify-content-center">
         <div v-if="$props.option !== 'lawOwner'">
           <button
-            v-if="$props.canVote"
+            v-if="!$props.data.alreadyInitiated"
             class="btn btn-outline-success"
+            :class="$props.data.alreadyVoted ? 'disabled' : ''"
             @click="vote($props.data._id)"
           >
-            โหวตให้กฎหมายนี้
+            {{
+              !$props.data.alreadyVoted
+                ? 'เข้าชื่อเสนอกฎหมายนี้'
+                : 'คุณได้เข้าชื่อเสนอกฎหมายนี้ไปเรียบร้อยแล้ว'
+            }}
           </button>
         </div>
         <div v-else>
