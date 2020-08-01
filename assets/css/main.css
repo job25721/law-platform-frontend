@@ -6,27 +6,47 @@
   font-family: Sarabun-bold;
   src: url('/fonts/THSarabunNew Bold.ttf');
 }
+@font-face {
+  font-family: Sukhumvit-Text;
+  src: url(/fonts/sukhumvit-set/SukhumvitSet-Text.ttf);
+}
+@font-face {
+  font-family: Sukhumvit-Medium;
+  src: url(/fonts/sukhumvit-set/SukhumvitSet-Medium.ttf);
+}
+@font-face {
+  font-family: Sukhumvit-Bold;
+  src: url(/fonts/sukhumvit-set/SukhumvitSet-Bold.ttf);
+}
 
-body {
+@font-face {
+  font-family: Sukhumvit-SemiBold;
+  src: url(/fonts/sukhumvit-set/SukhumvitSet-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Sukhumvit-Light;
+  src: url(/fonts/sukhumvit-set/SukhumvitSet-Light.ttf);
+}
+
+@font-face {
+  font-family: Sukhumvit-Thin;
+  src: url(/fonts/sukhumvit-set/SukhumvitSet-Thin.ttf);
+}
+
+body,
+html {
+  font-family: Sukhumvit-Light;
   height: 100vh;
   margin: 0;
 }
-
 h1,
-h2 {
-  font-family: Sarabun-bold;
-}
-h1 {
-  font-size: 4rem;
-}
-h2 {
-  font-size: 3rem;
-}
-
-span,
-p,
-label {
-  font-family: Sarabun;
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Sukhumvit-Bold;
 }
 
 /* width */
