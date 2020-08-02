@@ -57,7 +57,7 @@
           >
         </div>
         <div class="buttons">
-          <button class="btn btn-info" @click="$router.push('/law/add')">
+          <button class="btn btn-info" @click="$router.push('/seleteform')">
             ริเริ่มร่างกฎหมาย
           </button>
           <button

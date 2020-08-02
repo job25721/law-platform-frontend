@@ -7,24 +7,30 @@
       <div class="row mt-5">
         <div class="col-4">
           <div class="float-right">
-            <button class="btn btn-info">
-              <p class="m-4">
-                ขอให้ช่วยจัดทำร่างกฎหมาย
-              </p>
-            </button>
+            <a href="/form"
+              ><button class="btn btn-info">
+                <p class="m-4">
+                  ขอให้ช่วยจัดทำร่างกฎหมาย
+                </p>
+              </button></a
+            >
           </div>
         </div>
         <div class="col-4">
           <div style="margin-left: 20%;">
-            <button class="btn btn-success">
-              <p class="m-4">มีร่างกฎหมายแล้ว</p>
-            </button>
+            <a href="/form_pro"
+              ><button class="btn btn-success">
+                <p class="m-4">มีร่างกฎหมายแล้ว</p>
+              </button></a
+            >
           </div>
         </div>
         <div class="col-4">
-          <button class="btn bg-white">
-            <p class="m-4">อัพโหลดไฟล์ร่างกฎหมาย</p>
-          </button>
+          <a href=""
+            ><button class="btn bg-white">
+              <p class="m-4">อัพโหลดไฟล์ร่างกฎหมาย</p>
+            </button></a
+          >
         </div>
       </div>
     </div>
