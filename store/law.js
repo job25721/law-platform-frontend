@@ -72,7 +72,7 @@ export const actions = {
           conslusion,
         })
         this.$swal('Success', 'ริเริ่มสำเร็จ', 'success')
-        this.$rouer.push('/mylaw')
+        this.$router.push('/mylaw')
       }
     } catch {
       this.$swal('Error', 'ริเริ่มไม่สำเร็จ', 'error')

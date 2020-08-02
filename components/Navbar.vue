@@ -9,7 +9,7 @@
           alt=""
         />
         <span style="font-family: Sarabun-bold; font-size: 30px;"
-          >โหวตและเข้าชื่อเสนอกฎหมาย</span
+          >การข้าชื่อเสนอกฎหมายของประชาชน</span
         ></span
       >
       <button
