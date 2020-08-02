@@ -47,9 +47,6 @@
           >
             ส่งอีกครั้ง
           </button>
-          <button class="btn btn-danger">
-            ยืนยัน
-          </button>
         </div>
         <p
           style="font-size: 25px;"

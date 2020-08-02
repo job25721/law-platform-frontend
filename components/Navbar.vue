@@ -9,7 +9,7 @@
           alt=""
         />
         <span style="font-family: Sarabun-bold; font-size: 30px;"
-          >โหวตและเข้าชื่อเสนอกฎหมาย</span
+          >การข้าชื่อเสนอกฎหมายของประชาชน</span
         ></span
       >
       <button
@@ -49,15 +49,17 @@
             </button>
           </li>
         </ul>
-        <div v-if="$auth.loggedIn" class="text-white mr-3">
+        <!-- <div v-if="$auth.loggedIn" class="text-white mr-3">
           <i class="fas fa-user-alt pr-1"></i>
           <span
             >{{ $auth.user.person.name.first }}
             {{ $auth.user.person.name.last }}</span
           >
-        </div>
+        </div> -->
         <div class="buttons">
-          <button class="btn btn-info">ริเริ่มร่างกฎหมาย</button>
+          <button class="btn btn-info" @click="$router.push('/seleteform')">
+            ขอให้ช่วยจัดทำร่างกฎหมาย
+          </button>
           <button
             v-if="!$auth.loggedIn"
             class="btn btn-success"

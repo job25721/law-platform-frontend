@@ -64,7 +64,7 @@
                 type="button"
                 class="btn btn-primary"
                 data-dismiss="modal"
-                @click="$router.push('/camera/')"
+                @click="$router.push('/verification')"
               >
                 ถัดไป
               </button>

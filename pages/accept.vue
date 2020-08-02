@@ -57,11 +57,11 @@
             เมื่อผู้มีสิทธิเลือกตั้งผู้ใดร่วมลงชื่อในการเข้าชื่อเสนอกฎหมายโดยถูกต้องแล้ว
             จะถอนชื่อภายหลังมิได้
           </p>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" />
-            <label class="custom-control-label col-form-label-lg"
-              >ยอมรับข้อตกลงในการใช้งาน</label
-            >
+          <div class="form-check">
+            <input class="form-check-input mt-1" type="checkbox" />
+            <label class="form-check-label" for="defaultCheck1">
+              ยอมรับข้อตกลงในการเข้าใช้งาน
+            </label>
           </div>
           <div class="float-right">
             <button type="submit" class="btn btn-success">ถัดไป</button>
@@ -71,3 +71,12 @@
     </div>
   </div>
 </template>
+<style scoped>
+input {
+  size: 36px;
+}
+label {
+  color: blue;
+  font-size: 22px;
+}
+</style>
