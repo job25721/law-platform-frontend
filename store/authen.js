@@ -49,6 +49,7 @@ export const actions = {
           idCardNumber: state.cardId,
         },
       })
+      this.$router.push('/camera')
     } catch {
       this.$swal('Error', 'เกิดข้อผิดพลาด', 'error')
     }

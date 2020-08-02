@@ -12,7 +12,13 @@
             <input type="text" class="form-control" />
           </div>
           <div class="col-2">
-            <button class="btn btn-primary" type="submit">ยืนยัน</button>
+            <button
+              class="btn btn-primary"
+              type="submit"
+              @click="$router.push('/')"
+            >
+              ยืนยัน
+            </button>
           </div>
         </div>
       </div>
