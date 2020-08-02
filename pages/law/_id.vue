@@ -98,6 +98,7 @@
           </div>
         </LawPaper>
       </div>
+
       <!--  -->
       <div class="col-3">
         <div class="float-right">
@@ -113,6 +114,14 @@
                 : 'คุณได้เข้าชื่อเสนอกฎหมายนี้ไปเรียบร้อยแล้ว'
             }}
           </button>
+          <div v-if="$route.query.invite" class="buttons m-3 text-left">
+            <button class="btn btn-success" @click="acceptInvite">
+              ตอบรับคำเชิญริเริ่ม
+            </button>
+            <button class="btn btn-danger" @click="$router.push('/')">
+              ปฏิเสธ
+            </button>
+          </div>
         </div>
       </div>
       <!--  -->
@@ -135,6 +144,7 @@ export default {
     }
   },
   async created() {
+    console.log(this.$route.query.invite)
     try {
       const res = await this.$axios.$get(`/laws/${this.$route.params.id}`)
       this.law = res.data.law
@@ -156,6 +166,16 @@ export default {
     ...mapActions({
       vote: 'law/voteConfirm',
     }),
+    async acceptInvite() {
+      try {
+        const res = await this.$axios.$post(
+          `/person/voteinitiate/${this.$route.params.id}`
+        )
+        this.$swal(res.data.message)
+      } catch {
+        this.$swal('ผิดพลาด', 'คุณได้ริเริ่มกฎหมายนี้ไปแล้ว', 'error')
+      }
+    },
   },
 }
 </script>

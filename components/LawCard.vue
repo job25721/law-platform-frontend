@@ -1,5 +1,5 @@
 <template>
-  <div class="card" @click="$router.push(`/law/${$props.data._id}`)">
+  <div class="card">
     <div class="card-body row align-items-center">
       <div class="col-lg-2 justify-content-center d-flex">
         <img
@@ -21,8 +21,10 @@
             {{ $props.data.description }}
           </p>
           <div class="status">
-            <span class="badge bg-info"
-              >จำนวนคนโหวตขณะนี้ {{ $props.data.voteNumber }} คน</span
+            <span
+              v-if="$props.data.status === status.GATHERING_VOTE"
+              class="badge bg-info"
+              >จำนวนคนเข้าชื่อเสนอ {{ $props.data.voteNumber }} คน</span
             >
             <span
               v-if="$props.option === 'lawOwner'"
@@ -50,6 +52,13 @@
         </div>
         <div v-else>
           <button
+            v-if="$props.data.status === status.INITIAL_STATUS"
+            class="btn btn-info"
+            @click="genLink"
+          >
+            รับลิงค์เชิญชวญผู้ริเริ่ม
+          </button>
+          <button
             v-if="$props.data.status === status.ALLOWED_WAIT_FOR_PUBLISH"
             class="btn btn-success"
           >
@@ -58,8 +67,15 @@
           <button
             v-if="$props.data.status === status.INITIAL_VOTE_COMPLETE"
             class="btn btn-warning"
+            @click="sendToAdmin($props.data._id)"
           >
             ส่งให้รัฐมภาตรวจสอบ
+          </button>
+          <button
+            v-if="$props.data.status === status.VOTE_COMPLETE"
+            class="btn btn-warning"
+          >
+            ส่งให้รัฐมภายืนยัน
           </button>
           <div
             v-if="
@@ -75,7 +91,10 @@
             </button>
           </div>
         </div>
-        <button class="btn btn-light inspect">
+        <button
+          class="btn btn-light inspect"
+          @click="$router.push(`/law/${$props.data._id}`)"
+        >
           <i class="fas fa-search"></i>
         </button>
       </div>
@@ -102,6 +121,9 @@ export default {
     }
   },
   computed: {
+    currentPath() {
+      return this.$route.name
+    },
     statusColor() {
       const c = this.$props.data.status
       if (
@@ -127,7 +149,15 @@ export default {
   methods: {
     ...mapActions({
       vote: 'law/voteConfirm',
+      sendToAdmin: 'law/sendToAdmin',
     }),
+    genLink() {
+      this.$swal(
+        'สำเร็จ!',
+        `ลิงค์เชิญชวน : http://localhost:3000/invite/${this.$props.data._id}`,
+        'success'
+      )
+    },
   },
 }
 </script>

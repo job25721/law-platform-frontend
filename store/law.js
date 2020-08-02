@@ -46,4 +46,43 @@ export const actions = {
       throw err
     }
   },
+  async add(
+    context,
+    { sections, principle, reason, description, conslusion, type, title }
+  ) {
+    const sec = sections.map((section) => {
+      let str = `หมวดที่ ${section.id} ${section.content} `
+      section.subSection.forEach((sub) => {
+        str += `มาตรา ${sub.id} ${sub.content} `
+      })
+      return str
+    })
+    console.log(conslusion)
+    try {
+      // eslint-disable-next-line unicorn/error-message
+      if (type === -1) throw new Error()
+      else {
+        await this.$axios.$post('/person/laws', {
+          title,
+          type,
+          description,
+          section: sec,
+          principle,
+          reason,
+          conslusion,
+        })
+        this.$swal('Success', 'ริเริ่มสำเร็จ', 'success')
+      }
+    } catch {
+      this.$swal('Error', 'ริเริ่มไม่สำเร็จ', 'error')
+    }
+  },
+  async sendToAdmin(context, lawId) {
+    try {
+      await this.$axios.$post(`/person/send-admin-allow/${lawId}`)
+      this.$swal('สำเร็จ', 'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน', 'success')
+    } catch (error) {
+      this.$swal('ผิดพลาด', 'คุณต้องเป็นเจ้าของกฎหมายนี้', 'error')
+    }
+  },
 }
