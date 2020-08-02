@@ -5,32 +5,20 @@
         การเสนอร่างกฎหมาย
       </h5>
       <div class="row mt-5">
-        <div class="col-4">
+        <div class="col-1"></div>
+        <div class="col-5">
           <div class="float-right">
-            <a href="/form"
-              ><button class="btn btn-info">
-                <p class="m-4">
-                  ขอให้ช่วยจัดทำร่างกฎหมาย
-                </p>
-              </button></a
-            >
+            <button class="btn btn-info">
+              <p class="m-4">
+                ขอให้ช่วยจัดทำร่างกฎหมาย
+              </p>
+            </button>
           </div>
         </div>
-        <div class="col-4">
-          <div style="margin-left: 20%;">
-            <a href="/form_pro"
-              ><button class="btn btn-success">
-                <p class="m-4">มีร่างกฎหมายแล้ว</p>
-              </button></a
-            >
-          </div>
-        </div>
-        <div class="col-4">
-          <a href=""
-            ><button class="btn bg-white">
-              <p class="m-4">อัพโหลดไฟล์ร่างกฎหมาย</p>
-            </button></a
-          >
+        <div class="col-5">
+          <button class="btn btn-success">
+            <p class="m-4">มีร่างกฎหมายแล้ว</p>
+          </button>
         </div>
       </div>
     </div>
