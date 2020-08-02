@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <h2 class="text-center">แบบฟอร์มเสนอชื่อเข้ากฎหมาย</h2>
-      {{ sections }}
+
       <div
         class="bg-white p-5"
         style="height: 70vh; width: 70%; overflow: auto;"

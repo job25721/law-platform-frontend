@@ -72,6 +72,7 @@ export const actions = {
           conslusion,
         })
         this.$swal('Success', 'ริเริ่มสำเร็จ', 'success')
+        this.$rouer.push('/mylaw')
       }
     } catch {
       this.$swal('Error', 'ริเริ่มไม่สำเร็จ', 'error')
@@ -81,6 +82,16 @@ export const actions = {
     try {
       await this.$axios.$post(`/person/send-admin-allow/${lawId}`)
       this.$swal('สำเร็จ', 'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน', 'success')
+      this.$rouer.push('/mylaw')
+    } catch (error) {
+      this.$swal('ผิดพลาด', 'คุณต้องเป็นเจ้าของกฎหมายนี้', 'error')
+    }
+  },
+  async sendToSubmit(content, lawId) {
+    try {
+      await this.$axios.$post(`/person/send-admin-submit/${lawId}`)
+      this.$swal('สำเร็จ', 'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน', 'success')
+      this.$rouer.push('/mylaw')
     } catch (error) {
       this.$swal('ผิดพลาด', 'คุณต้องเป็นเจ้าของกฎหมายนี้', 'error')
     }

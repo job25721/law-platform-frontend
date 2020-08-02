@@ -74,6 +74,7 @@
           <button
             v-if="$props.data.status === status.VOTE_COMPLETE"
             class="btn btn-warning"
+            @click="sendSubmit($props.data._id)"
           >
             ส่งให้รัฐมภายืนยัน
           </button>
@@ -150,6 +151,7 @@ export default {
     ...mapActions({
       vote: 'law/voteConfirm',
       sendToAdmin: 'law/sendToAdmin',
+      sendSubmit: 'law/sendToSubmit',
     }),
     genLink() {
       this.$swal(
