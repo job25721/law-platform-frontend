@@ -48,7 +48,7 @@ export const actions = {
   },
   async add(
     context,
-    { sections, principle, reason, description, conclusion, type, title }
+    { sections, principle, reason, description, conslusion, type, title }
   ) {
     const sec = sections.map((section) => {
       let str = `หมวดที่ ${section.id} ${section.content} `
@@ -57,7 +57,7 @@ export const actions = {
       })
       return str
     })
-    console.log(sec, principle, reason, description, conclusion)
+    console.log(conslusion)
     try {
       // eslint-disable-next-line unicorn/error-message
       if (type === -1) throw new Error()
@@ -67,14 +67,22 @@ export const actions = {
           type,
           description,
           section: sec,
-          principal: principle,
+          principle,
           reason,
-          conclusion,
+          conslusion,
         })
         this.$swal('Success', 'ริเริ่มสำเร็จ', 'success')
       }
     } catch {
       this.$swal('Error', 'ริเริ่มไม่สำเร็จ', 'error')
+    }
+  },
+  async sendToAdmin(context, lawId) {
+    try {
+      await this.$axios.$post(`/person/send-admin-allow/${lawId}`)
+      this.$swal('สำเร็จ', 'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน', 'success')
+    } catch (error) {
+      this.$swal('ผิดพลาด', 'คุณต้องเป็นเจ้าของกฎหมายนี้', 'error')
     }
   },
 }

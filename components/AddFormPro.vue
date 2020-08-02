@@ -250,7 +250,7 @@ export default {
         principle: this.principle,
         reason: this.reason,
         description: this.description,
-        conclusion: this.conclusion,
+        conslusion: this.conclusion,
         type: this.type,
         title: this.title,
       })
