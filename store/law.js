@@ -82,7 +82,7 @@ export const actions = {
     try {
       await this.$axios.$post(`/person/send-admin-allow/${lawId}`)
       this.$swal('สำเร็จ', 'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน', 'success')
-      this.$rouer.push('/mylaw')
+      this.$router.push('/mylaw')
     } catch (error) {
       this.$swal('ผิดพลาด', 'คุณต้องเป็นเจ้าของกฎหมายนี้', 'error')
     }
@@ -91,7 +91,7 @@ export const actions = {
     try {
       await this.$axios.$post(`/person/send-admin-submit/${lawId}`)
       this.$swal('สำเร็จ', 'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน', 'success')
-      this.$rouer.push('/mylaw')
+      this.$router.push('/mylaw')
     } catch (error) {
       this.$swal('ผิดพลาด', 'คุณต้องเป็นเจ้าของกฎหมายนี้', 'error')
     }

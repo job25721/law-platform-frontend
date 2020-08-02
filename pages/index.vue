@@ -1,7 +1,20 @@
 <template>
   <div class="p-4">
+    <div
+      style="position: absolute; bottom: 0; right: 0; z-index: 1; opacity: 0.8;"
+      class="bg-white"
+    >
+      <p>ติดตามข่าวสารต่างๆได้ที่</p>
+      <div class="d-flex justify-content-center"><img src="/qr.png" /></div>
+
+      <p>Line@: E-innitiative_thailand</p>
+    </div>
     <div>
-      <h1 style="font-size: 35px;">รายชื่อกฎหมายที่ส่งเข้าเสนอชื่อ</h1>
+      <div class="row">
+        <div class="col-6">
+          <h1 style="font-size: 35px;">รายชื่อกฎหมายที่ส่งเข้าเสนอชื่อ</h1>
+        </div>
+      </div>
       <div class="row">
         <div class="col-2">
           <button class="btn btn-danger">เสนอกฎหมายต่อสภา</button>
@@ -42,5 +55,13 @@ export default {
 .card-container {
   height: 70vh;
   overflow: auto;
+}
+img {
+  height: 50px;
+  width: 50px;
+}
+p {
+  font-family: Sarabun;
+  font-size: 20px;
 }
 </style>
