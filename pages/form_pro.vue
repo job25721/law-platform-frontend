@@ -130,6 +130,16 @@
             </div>
           </div>
           <!--  -->
+          <div class="row mt-4">
+            <div class="col-4 mt-2"><h4>อัพโหลดร่างกฎหมาย</h4></div>
+            <div class="col-4 setpadding">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" />
+                <label class="custom-file-label" for="customFile"></label>
+              </div>
+            </div>
+          </div>
+          <!--  -->
           <div class="row mt-3">
             <div class="col-2"></div>
             <div class="col-4">

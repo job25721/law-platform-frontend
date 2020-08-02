@@ -8,17 +8,21 @@
         <div class="col-1"></div>
         <div class="col-5">
           <div class="float-right">
-            <button class="btn btn-info">
-              <p class="m-4">
-                ขอให้ช่วยจัดทำร่างกฎหมาย
-              </p>
-            </button>
+            <a href="/form">
+              <button class="btn btn-info">
+                <p class="m-4">
+                  ขอให้ช่วยจัดทำร่างกฎหมาย
+                </p>
+              </button></a
+            >
           </div>
         </div>
         <div class="col-5">
-          <button class="btn btn-success">
-            <p class="m-4">มีร่างกฎหมายแล้ว</p>
-          </button>
+          <a href="/form_pro"
+            ><button class="btn btn-success">
+              <p class="m-4">มีร่างกฎหมายแล้ว</p>
+            </button></a
+          >
         </div>
       </div>
     </div>
