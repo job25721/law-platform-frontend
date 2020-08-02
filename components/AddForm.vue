@@ -17,7 +17,7 @@
             <div class="col-6">
               <div class="form-group">
                 <label>ประเภทของกฎหมายที่จะเข้าเสนอ</label>
-                <select class="browser-default custom-select form-control">
+                <select class="browser-default form-select">
                   <option selected>โปรดเลือก</option>
                   <option value="1">ทั่วไป</option>
                   <option value="2">การเงิน</option>
