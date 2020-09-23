@@ -71,7 +71,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://103.3.60.239:8000/api',
+    baseURL: 'http://3.137.208.125/api',
   },
   auth: {
     strategies: {

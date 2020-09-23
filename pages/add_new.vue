@@ -28,6 +28,11 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  middleware: 'auth',
+}
+</script>
 <style scoped>
 p {
   font-size: 38px;

@@ -1,5 +1,6 @@
 <template>
   <div class="p-4">
+    {{ law }}
     <div v-if="loading" class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
     </div>
@@ -25,14 +26,18 @@
           {{ createdYear }}
         </span>
         <h5>ประเภท : {{ law.type }}</h5>
+        <h6>
+          ผู้ริเริ่ม : {{ law.initiatePerson.name.first }}
+          {{ law.initiatePerson.name.last }}
+        </h6>
         <button type="button" class="btn btn-sm btn-info" disabled>
           จำนวนคนเข้าชื่อเสนอ : {{ law.voteNumber }} คน
         </button>
-        <img
-          :src="`http://103.3.60.239:8000${law.image}`"
+        <!-- <img
+          :src="`http://3.137.208.125/api${law.image}`"
           class="center mt-3"
           style="width: 100%;"
-        />
+        /> -->
       </div>
       <div class="col-lg-6" style="overflow: auto; height: 80vh;">
         <LawPaper>
@@ -47,17 +52,11 @@
             <div class="text-left">
               <p>หลักการ</p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                deserunt expedita voluptate quam delectus facere ut maiores
-                quidem debitis animi voluptas voluptates, minima et rerum
-                cupiditate quia hic itaque laudantium.
+                {{ law.principle }}
               </p>
               <p>เหตุผล</p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                deserunt expedita voluptate quam delectus facere ut maiores
-                quidem debitis animi voluptas voluptates, minima et rerum
-                cupiditate quia hic itaque laudantium.
+                {{ law.reason }}
               </p>
             </div>
           </div>
@@ -75,9 +74,9 @@
               </p>
               <p v-for="(sec, i) in law.section" :key="i">
                 <span style="font-family: Sarabun-bold;"
-                  >มาตรา {{ i + 1 }}
+                  >หมวดที่ {{ i + 1 }}
                 </span>
-                <span>{{ sec }}</span>
+                <span>{{ sec.split(`หมวดที่ ${i + 1} `)[1] }}</span>
               </p>
             </div>
           </div>
@@ -90,10 +89,7 @@
               {{ createdYear }}
             </p>
             <div class="text-left">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam
-              laudantium in, vitae, earum illum nihil a dolorum aliquid tempore
-              quaerat sed, nostrum quas laborum. Aliquam doloribus sit laborum
-              quae ipsa?
+              {{ law.conslusion }}
             </div>
           </div>
         </LawPaper>
@@ -103,7 +99,7 @@
       <div class="col-3">
         <div class="float-right">
           <button
-            v-if="!law.alreadyInitiated"
+            v-if="!law.alreadyInitiated && law.alreadyInitiated"
             class="btn btn-success btn-lg"
             :class="law.alreadyVoted ? 'disabled' : ''"
             @click="vote(law._id)"
@@ -172,6 +168,7 @@ export default {
           `/person/voteinitiate/${this.$route.params.id}`
         )
         this.$swal(res.data.message)
+        this.$router.push('/mylaw')
       } catch {
         this.$swal('ผิดพลาด', 'คุณได้ริเริ่มกฎหมายนี้ไปแล้ว', 'error')
       }

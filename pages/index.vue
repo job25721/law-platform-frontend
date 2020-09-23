@@ -17,11 +17,11 @@
       </div>
       <div class="row">
         <div class="col-2">
-          <button class="btn btn-danger">เสนอกฎหมายต่อสภา</button>
-        </div>
-        <div class="col-2">
           <div class="form-group">
-            <select class="browser-default form-select">
+            <select
+              v-if="Laws.length !== 0"
+              class="browser-default form-select"
+            >
               <option selected>โปรดเลือกประเภท</option>
               <option value="1">ทั่วไป</option>
               <option value="2">การเงิน</option>
@@ -33,6 +33,9 @@
     </div>
     <div class="card-container container-fluid mt-3">
       <LawCard v-for="law in Laws" :key="law._id" :data="law" />
+      <div v-if="Laws.length === 0" class="alert alert-danger">
+        ยังไม่มีเสนอร่างใดๆ
+      </div>
     </div>
   </div>
 </template>
@@ -47,6 +50,9 @@ export default {
   },
   async created() {
     await this.$store.dispatch('law/getLaws')
+  },
+  mounted() {
+    console.log(window.location.hostname)
   },
 }
 </script>

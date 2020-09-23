@@ -3,7 +3,7 @@
     <div class="card-body row align-items-center">
       <div class="col-lg-2 justify-content-center d-flex">
         <img
-          :src="`http://103.3.60.239:8000${$props.data.image}`"
+          :src="`http://3.137.208.125${$props.data.image}`"
           width="100%"
           alt=""
         />
@@ -156,7 +156,7 @@ export default {
     genLink() {
       this.$swal(
         'สำเร็จ!',
-        `ลิงค์เชิญชวน : http://localhost:3000/invite/${this.$props.data._id}`,
+        `ลิงค์เชิญชวน : http://${window.location.hostname}/invite/${this.$props.data._id}`,
         'success'
       )
     },

@@ -1,9 +1,11 @@
+const timeOut = 60
+
 export const state = () => ({
   phoneNumber: '0932277124',
   otpisGen: false,
   otp: '',
-  cardId: '4444444444444',
-  remainingOtpTime: 60,
+  cardId: '',
+  remainingOtpTime: timeOut,
   waitingOtpConfirm: false,
 })
 
@@ -27,15 +29,23 @@ export const mutations = {
     state.waitingOtpConfirm = paylaod
   },
 }
-
+function set() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve()
+    }, 1000)
+  })
+}
 export const actions = {
   async otpGenerate({ commit, state, dispatch }) {
     try {
       await this.$axios.$post('/otp/generate', {
         phoneNumber: state.phoneNumber,
       })
+      commit('SET_REMAIN_OTP', timeOut)
       commit('CHANGE_OTP_STATE', true)
-      dispatch('countdown')
+
+      await dispatch('countdown')
     } catch {
       this.$swal('Error', 'เกิดข้อผิดพลาด', 'error')
     }
@@ -54,16 +64,12 @@ export const actions = {
       this.$swal('Error', 'เกิดข้อผิดพลาด', 'error')
     }
   },
-  countdown({ commit, state }) {
+  async countdown({ commit, state }) {
     commit('SET_WAITING_OTP_CONFIRM', true)
-    const timeOut = new Date().getSeconds() + 60
-    const loop = setInterval(() => {
-      const now = new Date().getSeconds()
-      commit('SET_REMAIN_OTP', timeOut - now)
-      if (state.remainingOtpTime <= 0) {
-        commit('SET_WAITING_OTP_CONFIRM', false)
-        clearInterval(loop)
-      }
-    }, 1000)
+    for (let c = state.remainingOtpTime; c >= 0; c--) {
+      commit('SET_REMAIN_OTP', c)
+      await set()
+    }
+    commit('SET_WAITING_OTP_CONFIRM', false)
   },
 }

@@ -81,8 +81,14 @@ export const actions = {
   async sendToAdmin(context, lawId) {
     try {
       await this.$axios.$post(`/person/send-admin-allow/${lawId}`)
-      this.$swal('สำเร็จ', 'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน', 'success')
-      this.$router.push('/mylaw')
+      const res = await this.$swal(
+        'สำเร็จ',
+        'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน',
+        'success'
+      )
+      if (res.value) {
+        window.location.reload()
+      }
     } catch (error) {
       this.$swal('ผิดพลาด', 'คุณต้องเป็นเจ้าของกฎหมายนี้', 'error')
     }
@@ -90,8 +96,14 @@ export const actions = {
   async sendToSubmit(content, lawId) {
     try {
       await this.$axios.$post(`/person/send-admin-submit/${lawId}`)
-      this.$swal('สำเร็จ', 'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน', 'success')
-      this.$router.push('/mylaw')
+      const res = await this.$swal(
+        'สำเร็จ',
+        'ส่งให้เจ้าหน้าสภาตรวจสอบ รอการยืนยัน',
+        'success'
+      )
+      if (res.value) {
+        window.location.reload()
+      }
     } catch (error) {
       this.$swal('ผิดพลาด', 'คุณต้องเป็นเจ้าของกฎหมายนี้', 'error')
     }

@@ -1,7 +1,11 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: #800000;">
     <div class="container-fluid">
-      <span class="navbar-brand d-flex align-items-center">
+      <span
+        class="navbar-brand d-flex align-items-center"
+        style="cursor: pointer;"
+        @click="$router.push('/')"
+      >
         <img
           src="/logo.svg"
           class="d-inline-block mr-3 p-1"
@@ -34,7 +38,7 @@
               aria-current="page"
               @click="$router.push('/')"
             >
-              รายชื่อกฎหมายที่เปิดโหวต
+              รายชื่อกฎหมายที่เข้าเสนอชื่อ
             </button>
           </li>
           <li v-if="$auth.loggedIn" class="nav-item">
@@ -50,14 +54,22 @@
           </li>
         </ul>
         <!-- <div v-if="$auth.loggedIn" class="text-white mr-3">
-          <i class="fas fa-user-alt pr-1"></i>
+          
           <span
             >{{ $auth.user.person.name.first }}
             {{ $auth.user.person.name.last }}</span
           >
         </div> -->
+        <div v-if="$auth.loggedIn" class="mx-3 p-2 text-white">
+          <p>
+            <i class="fas fa-user-alt pr-1"></i> :
+            {{ $auth.user.person.name.first }}
+            {{ $auth.user.person.name.last }}
+          </p>
+          <p>รหัสประชาชน : {{ $auth.user.person.idCardNumber }}</p>
+        </div>
         <div class="buttons">
-          <button class="btn btn-info" @click="$router.push('/seleteform')">
+          <button class="btn btn-info" @click="$router.push('/add_new')">
             ขอให้ช่วยจัดทำร่างกฎหมาย
           </button>
           <button
@@ -77,12 +89,23 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      person: '',
+    }
+  },
   computed: {
     currentPath() {
       return this.$route.name
     },
   },
-  created() {
+  async created() {
+    try {
+      this.person = await this.$axios.$get('/person/info')
+    } catch (error) {
+      console.log(error)
+    }
+    console.log(this.person)
     console.log(this.currentPath)
     console.log(this.$auth.user)
   },
