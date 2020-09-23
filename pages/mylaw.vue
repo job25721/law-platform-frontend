@@ -14,7 +14,7 @@
         <h1 style="font-size: 1.5rem; color: #000000;" class="mr-3">
           ไม่มีกฎหมายที่คุณริเริ่ม
         </h1>
-        <button class="btn btn-light">
+        <button @click="$router.push('/add_new')" class="btn btn-light">
           ริเริ่มร่างกฎหมาย
         </button>
       </div>

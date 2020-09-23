@@ -85,6 +85,11 @@ export default {
   data() {
     return {}
   },
+  created() {
+    if (this.$auth.loggedIn) {
+      this.$router.push('/')
+    }
+  },
   computed: {
     ...mapState({
       otpisGen: ({ authen }) => authen.otpisGen,

@@ -1,6 +1,5 @@
 <template>
   <div class="p-4">
-    {{ law }}
     <div v-if="loading" class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
     </div>
@@ -99,7 +98,7 @@
       <div class="col-3">
         <div class="float-right">
           <button
-            v-if="!law.alreadyInitiated && law.alreadyInitiated"
+            v-if="!law.alreadyVoted"
             class="btn btn-success btn-lg"
             :class="law.alreadyVoted ? 'disabled' : ''"
             @click="vote(law._id)"
