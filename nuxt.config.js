@@ -3,7 +3,7 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -14,7 +14,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'การข้าชื่อเสนอกฎหมายของประชาชน',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -37,6 +37,7 @@ export default {
   css: [
     '~/static/bootstrap-alpha/css/bootstrap.min.css',
     '~/assets/css/main.css',
+    '~/node_modules/@fortawesome/fontawesome-free/css/all.min.css',
   ],
   /*
    ** Plugins to load before mounting the App
@@ -61,7 +62,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // '@nuxtjs/auth',
+    '@nuxtjs/auth',
     '@nuxt/components',
     'vue-sweetalert2/nuxt',
   ],
@@ -69,8 +70,28 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
-  // auth: {},
+  axios: {
+    baseURL: 'http://3.137.208.125/api',
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/person/auth',
+            method: 'post',
+            propertyName: 'data.token',
+          },
+          logout: false,
+          user: {
+            url: '/person/info',
+            method: 'get',
+            propertyName: 'data',
+          },
+        },
+      },
+    },
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

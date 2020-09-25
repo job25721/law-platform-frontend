@@ -1,52 +1,73 @@
 <template>
-  <div class="container">
+  <div class="p-4">
+    <div
+      style="position: absolute; bottom: 0; right: 0; z-index: 1; opacity: 0.8;"
+      class="bg-white"
+    >
+      <p>ติดตามข่าวสารต่างๆได้ที่</p>
+      <div class="d-flex justify-content-center"><img src="/qr.png" /></div>
+
+      <p>Line@: E-innitiative_thailand</p>
+    </div>
     <div>
-      <Logo />
-      <h1 class="title">
-        law-platform-frontend
-      </h1>
-      <div class="links">
-        <a href="/test" rel="noopener noreferrer" class="button--grey">
-          Test page
-        </a>
+      <div class="row">
+        <div class="col-6">
+          <h1 style="font-size: 35px;">รายชื่อกฎหมายที่ส่งเข้าเสนอชื่อ</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <div class="form-group">
+            <select
+              v-if="Laws.length !== 0"
+              class="browser-default form-select"
+            >
+              <option selected>โปรดเลือกประเภท</option>
+              <option value="1">ทั่วไป</option>
+              <option value="2">การเงิน</option>
+              <option value="3">พิเศษ</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-container container-fluid mt-3">
+      <LawCard v-for="law in Laws" :key="law._id" :data="law" />
+      <div v-if="Laws.length === 0" class="alert alert-danger">
+        ยังไม่มีเสนอร่างใดๆ
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState({
+      Laws: ({ law }) => law.laws,
+    }),
+  },
+  async created() {
+    await this.$store.dispatch('law/getLaws')
+  },
+  mounted() {
+    console.log(window.location.hostname)
+  },
+}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss" scoped>
+.card-container {
+  height: 70vh;
+  overflow: auto;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+img {
+  height: 50px;
+  width: 50px;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+p {
+  font-family: Sarabun;
+  font-size: 20px;
 }
 </style>

@@ -7,11 +7,16 @@
     <p>สวัสดี normal</p>
     <label>test nuxt-sweetalert</label>
     <button class="btn btn-danger" @click="test">Alert</button>
+    <i class="fab fa-facebook fa-2x"></i>
   </div>
 </template>
 
 <script>
 export default {
+  async created() {
+    const res = await this.$axios.$get('/laws')
+    console.log(res)
+  },
   methods: {
     test() {
       this.$store.dispatch('alertFn')
