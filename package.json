@@ -17,7 +17,7 @@
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.11.0",
     "node-sass": "^4.14.1",
-    "nuxt": "^2.13.0",
+    "nuxt": "^3.4.3",
     "sass-loader": "^9.0.2",
     "scss": "^0.2.4",
     "vue-sweetalert2": "^3.0.6"
